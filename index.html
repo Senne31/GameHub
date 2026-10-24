@@ -871,6 +871,10 @@ async function cnRematch(){
 
 const app=document.getElementById('app');
 function render(){
+  // Sync page state before routing
+  if(cns&&G.page==='cn-lobby'&&cns.phase!=='lobby')G.page='cn-game';
+  if(cns&&G.page==='cn-game'&&cns.phase==='lobby')G.page='cn-lobby';
+  if(gs&&(G.page==='imp-lobby'||G.page==='imp-game'))G.page='imp-game';
   const p=G.page;
   if(p==='hub')return rHub();
   if(p==='imp-home')return rImpHome();
@@ -900,15 +904,6 @@ function rHub(){
   </div>
 </div>`;
 }
-
-// Sincronizar page quando volta de lobby
-function syncPage(){
-  if(cns&&G.page==='cn-lobby'&&cns.phase!=='lobby')G.page='cn-game';
-  if(cns&&G.page==='cn-game'&&cns.phase==='lobby')G.page='cn-lobby';
-  if(gs&&(G.page==='imp-lobby'||G.page==='imp-game'))G.page='imp-game';
-}
-const _render=render;
-function render(){syncPage();_render();}
 
 render();
 </script>
