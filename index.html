@@ -41,6 +41,8 @@ body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,san
 .btn-secondary{background:var(--surface2);color:var(--text);border:1.5px solid var(--border)}
 .btn-secondary:not(:disabled):hover{border-color:var(--accent);color:var(--accent)}
 .btn-danger{background:var(--red);color:#fff}
+.btn-red{background:rgba(255,68,68,.2);color:#ff8888;border:1.5px solid var(--red)}
+.btn-blue{background:rgba(0,229,255,.12);color:var(--accent2);border:1.5px solid var(--accent2)}
 .btn-sm{padding:9px 14px;font-size:.85rem;border-radius:8px}
 .back{background:none;border:none;color:var(--muted);cursor:pointer;font-size:.85rem;padding:8px 0;margin-bottom:18px;display:flex;align-items:center;gap:5px}
 .back:hover{color:var(--text)}
@@ -60,10 +62,11 @@ body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,san
 .badge.host{background:rgba(124,77,255,.2);color:var(--accent)}
 .badge.you{background:rgba(0,229,255,.15);color:var(--accent2)}
 .badge.ready{background:rgba(68,255,136,.18);color:var(--green)}
+.badge.red-t{background:rgba(255,68,68,.2);color:#ff8888}
+.badge.blue-t{background:rgba(0,229,255,.12);color:var(--accent2)}
+/* Impostor styles */
 .word-card{background:var(--surface);border:2px solid var(--border);border-radius:16px;padding:36px 24px;text-align:center;margin-bottom:22px;min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:all .2s}
-.word-card.tap{cursor:pointer}
-.word-card.tap:active{transform:scale(.98)}
-.word-card.impostor{border-color:var(--red)}
+.word-card.tap{cursor:pointer}.word-card.tap:active{transform:scale(.98)}.word-card.impostor{border-color:var(--red)}
 .word-big{font-size:2.1rem;font-weight:900}
 .theme-lbl{font-size:.83rem;color:var(--muted);margin-bottom:8px}
 .timer-box{background:var(--surface2);border-radius:var(--r);padding:22px;text-align:center;margin-bottom:20px;border:1.5px solid var(--border)}
@@ -75,8 +78,7 @@ body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,san
 .vote-card:not(.no-vote):not(.done):hover{border-color:var(--accent)}
 .vote-card:not(.no-vote):not(.done):active{transform:scale(.97)}
 .vote-card.selected{border-color:var(--accent);background:rgba(124,77,255,.14)}
-.vote-card.no-vote{opacity:.35;cursor:default}
-.vote-card.done{opacity:.7;cursor:default}
+.vote-card.no-vote{opacity:.35;cursor:default}.vote-card.done{opacity:.7;cursor:default}
 .result-banner{padding:26px;text-align:center;border-radius:var(--r);margin-bottom:18px}
 .result-banner.caught{background:rgba(68,255,136,.08);border:2px solid var(--green)}
 .result-banner.escaped{background:rgba(255,68,68,.08);border:2px solid var(--red)}
@@ -90,6 +92,47 @@ body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,san
 .status{padding:10px 14px;background:var(--surface2);border-radius:8px;color:var(--muted);font-size:.85rem;margin-bottom:12px;border:1px solid var(--border)}
 .host-panel{background:var(--surface);border:1.5px solid var(--accent);border-radius:var(--r);padding:16px;margin-top:14px}
 .host-panel-title{font-size:.8rem;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px;font-weight:700}
+/* Codenames styles */
+.cn-board{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;margin-bottom:14px}
+.cn-card{border-radius:7px;padding:5px 3px;text-align:center;font-size:.62rem;font-weight:800;min-height:50px;display:flex;align-items:center;justify-content:center;line-height:1.15;word-break:break-word;transition:all .15s;user-select:none;text-transform:uppercase;letter-spacing:.03em;border:2px solid transparent;cursor:default}
+.cn-card.clickable{cursor:pointer}
+.cn-card.clickable:hover{transform:scale(1.05);z-index:1}
+.cn-card.clickable:active{transform:scale(.97)}
+.cn-card.h{background:var(--surface2);color:var(--text);border-color:var(--border)}
+.cn-card.h.clickable:hover{border-color:var(--accent)}
+.cn-card.r{background:rgba(255,68,68,.85);color:#fff;border-color:#ff2222}
+.cn-card.b{background:rgba(0,140,200,.85);color:#fff;border-color:#0099dd}
+.cn-card.n{background:#3a3a4a;color:#9090a0;border-color:#4a4a5a}
+.cn-card.x{background:#111;color:#555;border-color:#222}
+.cn-card.sr{background:rgba(255,68,68,.25);color:#ff9999;border-color:#ff4444}
+.cn-card.sb{background:rgba(0,180,220,.2);color:#66ddff;border-color:#00aadd}
+.cn-card.sn{background:rgba(255,204,68,.08);color:#aa9955;border-color:#665500}
+.cn-card.sx{background:rgba(20,20,20,.8);color:#666;border-color:#333}
+.cn-card.done{opacity:.55;cursor:default!important;transform:none!important}
+.cn-score-bar{display:flex;align-items:center;justify-content:space-between;background:var(--surface2);border-radius:10px;padding:10px 14px;margin-bottom:12px}
+.cn-score-red{font-size:1.3rem;font-weight:900;color:#ff6666}
+.cn-score-blue{font-size:1.3rem;font-weight:900;color:var(--accent2)}
+.cn-turn-bar{text-align:center;padding:8px 14px;border-radius:8px;font-weight:700;font-size:.88rem;margin-bottom:10px}
+.cn-turn-bar.red{background:rgba(255,68,68,.15);color:#ff8888;border:1px solid rgba(255,68,68,.3)}
+.cn-turn-bar.blue{background:rgba(0,229,255,.08);color:var(--accent2);border:1px solid rgba(0,229,255,.2)}
+.cn-clue-display{background:var(--surface);border:1.5px solid var(--border);border-radius:10px;padding:12px 14px;margin-bottom:10px;text-align:center}
+.cn-clue-word{font-size:1.5rem;font-weight:900;color:var(--accent2)}
+.cn-clue-count{font-size:.85rem;color:var(--muted);margin-top:3px}
+.cn-spy-panel{background:var(--surface);border:1.5px solid var(--accent);border-radius:var(--r);padding:14px;margin-bottom:10px}
+.cn-legend{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;justify-content:center}
+.cn-legend-item{display:flex;align-items:center;gap:4px;font-size:.72rem}
+.cn-legend-dot{width:10px;height:10px;border-radius:2px}
+.team-select{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.team-btn{padding:20px 12px;border-radius:10px;border:2px solid;cursor:pointer;text-align:center;transition:all .2s;background:transparent}
+.team-btn.red{border-color:rgba(255,68,68,.4);color:#ff8888}
+.team-btn.red.active{background:rgba(255,68,68,.2);border-color:var(--red)}
+.team-btn.blue{border-color:rgba(0,229,255,.3);color:var(--accent2)}
+.team-btn.blue.active{background:rgba(0,229,255,.1);border-color:var(--accent2)}
+.role-select{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.role-btn{padding:16px 10px;border-radius:10px;border:2px solid var(--border);cursor:pointer;text-align:center;transition:all .2s;background:transparent;color:var(--muted)}
+.role-btn.active{border-color:var(--accent);color:var(--text);background:rgba(124,77,255,.1)}
+.role-icon{font-size:1.5rem;display:block;margin-bottom:5px}
+/* Shared */
 .dots::after{content:'...';animation:d 1.4s infinite steps(4,end)}
 @keyframes d{0%{content:''}25%{content:'.'}50%{content:'..'}75%{content:'...'}}
 .connecting{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;gap:16px;color:var(--muted)}
@@ -100,343 +143,251 @@ body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,san
 <body>
 <div id="app"><div class="connecting"><div class="spinner"></div><div>Carregando<span class="dots"></span></div></div></div>
 
-<!-- Firebase SDK via CDN -->
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js"></script>
-
 <script>
-// ── FIREBASE CONFIG ───────────────────────────────────────────────────────────
+// ── FIREBASE ──────────────────────────────────────────────────────────────────
 firebase.initializeApp({
-  apiKey: "AIzaSyDVeUZ9OtiBfahh4OT2StwGFy9W8eMNb28",
-  authDomain: "gamehub-bb2e3.firebaseapp.com",
-  databaseURL: "https://gamehub-bb2e3-default-rtdb.firebaseio.com",
-  projectId: "gamehub-bb2e3",
-  storageBucket: "gamehub-bb2e3.firebasestorage.app",
-  messagingSenderId: "1009976797910",
-  appId: "1:1009976797910:web:36563365c5e698910fb777"
+  apiKey:"AIzaSyDVeUZ9OtiBfahh4OT2StwGFy9W8eMNb28",
+  authDomain:"gamehub-bb2e3.firebaseapp.com",
+  databaseURL:"https://gamehub-bb2e3-default-rtdb.firebaseio.com",
+  projectId:"gamehub-bb2e3",
+  storageBucket:"gamehub-bb2e3.firebasestorage.app",
+  messagingSenderId:"1009976797910",
+  appId:"1:1009976797910:web:36563365c5e698910fb777"
 });
-const db = firebase.database();
-
-// ── TEMAS E PALAVRAS ──────────────────────────────────────────────────────────
-const THEMES=[
-  {id:1,cat:"🍕 Comida",words:["Pizza","Sushi","Hambúrguer","Macarrão","Frango","Bife","Salada","Sopa","Arroz","Feijão","Pão","Queijo","Ovo","Batata","Cenoura","Alface","Tomate","Cebola","Peixe","Camarão","Bacon","Linguiça","Torta","Bolo","Biscoito","Iogurte","Manteiga","Geleia","Mel","Chocolate","Sorvete","Pipoca","Nugget","Hot-dog","Crepe","Tapioca","Açaí","Pamonha","Coxinha","Pastel","Esfirra","Brigadeiro","Mousse","Pudim","Pão de queijo","Empada","Lasanha","Strogonoff","Churros","Waffle","Panqueca","Yakisoba","Temaki","Ramen","Curry","Falafel","Paella","Risoto","Gnocchi","Ravioli","Croissant","Muffin","Cupcake","Brownie","Cookie","Tiramisu","Cheesecake","Granola","Tacos","Burrito","Gyoza","Pad Thai","Kebab","Shawarma","Fondue","Quindim","Bolinho de chuva","Focaccia","Baguete","Macaron","Donuts"]},
-  {id:2,cat:"🐾 Animais",words:["Cachorro","Gato","Leão","Elefante","Cobra","Macaco","Cavalo","Vaca","Galinha","Porco","Papagaio","Tartaruga","Coelho","Pinguim","Girafa","Hipopótamo","Crocodilo","Tigre","Urso","Lobo","Raposa","Rato","Pombo","Águia","Tubarão","Polvo","Borboleta","Abelha","Formiga","Aranha","Sapo","Pato","Golfinho","Baleia","Rinoceronte","Canguru","Koala","Panda","Zebra","Flamingo","Camelo","Capivara","Tamanduá","Onça","Guepardo","Leopardo","Hiena","Alce","Javali","Tatu","Preguiça","Morcego","Coruja","Tucano","Arara","Colibri","Pavão","Avestruz","Pelicano","Garça","Foca","Manta","Piranha","Lula","Lagosta","Caranguejo","Caramujo","Besouro","Libelula","Peixe palhaço"]},
-  {id:3,cat:"⚽ Esportes",words:["Futebol","Basquete","Vôlei","Natação","Tênis","Boxe","Judô","Ciclismo","Ginástica","Golfe","Rugby","Handebol","Surfe","Skate","Corrida","Mergulho","Badminton","Esgrima","Caratê","Taekwondo","Luta livre","Maratona","Triatlo","Remo","Hipismo","Hóquei","Beisebol","Crossfit","Yoga","Pilates","Escalada","Snowboard","Ski","Atletismo","Canoagem","Vela","Parkour","Capoeira","Polo aquático","Nado sincronizado","Patinação","Halterofilismo","Arco e flecha","Tiro esportivo","Biatlo","Curling","Pentatlo","Americano","Cricket","Polo","Lacrosse","Peteca","Bilhar","Snooker","Dardos","MMA","Jiu jitsu","Muay thai","Kickboxing","Sumô","Kung fu","Corrida de obstáculos","Skydiving"]},
-  {id:4,cat:"🌍 Países",words:["Brasil","EUA","China","Japão","França","Alemanha","Itália","Espanha","México","Argentina","Rússia","Canadá","Austrália","Índia","Portugal","Holanda","Suécia","Noruega","Turquia","Egito","Marrocos","Tailândia","Coreia do Sul","Vietnã","Cuba","Peru","Chile","Colômbia","Venezuela","Bolívia","Equador","Paraguai","Uruguai","Polônia","Grécia","Israel","Paquistão","Nigéria","Quênia","Etiópia","África do Sul","Tanzânia","Gana","Angola","Moçambique","Indonésia","Malásia","Filipinas","Singapura","Bangladesh","Nepal","Myanmar","Mongólia","Cazaquistão","Irã","Iraque","Síria","Jordânia","Kuwait","Emirados","Suíça","Áustria","Bélgica","Dinamarca","Finlândia","Hungria","Romênia","Bulgária","Croácia","Nova Zelândia","Islândia"]},
-  {id:5,cat:"🎬 Cinema",words:["Comédia","Terror","Ação","Drama","Romance","Animação","Documentário","Ficção Científica","Aventura","Suspense","Musical","Fantasia","Guerra","Crime","Espionagem","Super-herói","Zumbi","Vampiro","Faroeste","Thriller","Policial","Western","Noir","Biopic","Cult","Anime","Telenovela","Reality","Stand-up","Sitcom","Comédia romântica","Épico","Indie","Found footage","Cyberpunk","Post-apocalíptico","Distopia","Ficção histórica","Sobrenatural","Paranormal","Exorcismo","Alien","Robô","Viagem no tempo","Universo paralelo","Fuga","Heist","Espião","Kung Fu","Samurai","Pirata","Viking","Gladiador","Esporte","Música","Dança","Circo","Magia"]},
-  {id:6,cat:"🎵 Música",words:["Violão","Guitarra","Piano","Bateria","Flauta","Violino","Saxofone","Trompete","Baixo","Teclado","Rock","Samba","Funk","Jazz","Pop","MPB","Reggae","Hip-hop","Forró","Pagode","Axé","Sertanejo","Metal","Blues","Gospel","Rap","R&B","Eletrônico","Country","Clássico","Bossa Nova","Drum and bass","Techno","House","Trap","Baile funk","Frevo","Chorinho","Maracatu","Heavy metal","Punk","Hardcore","Grunge","Alternative","Indie rock","Folk","Soul","Disco","New wave","Shoegaze","Ambient","Lofi","Vaporwave","Synthwave","K-pop","J-pop","Afrobeat","Cumbia","Merengue","Salsa","Bachata","Tango","Samba reggae","Piseiro","Brega funk","Sertanejo raiz","Toada","Xote","Baião","Xaxado","Acordeão"]},
-  {id:7,cat:"🏠 Casa",words:["Sofá","Mesa","Cadeira","Cama","Geladeira","Fogão","Televisão","Janela","Porta","Armário","Espelho","Tapete","Cortina","Lâmpada","Ventilador","Micro-ondas","Liquidificador","Banheiro","Cozinha","Sala","Quarto","Garagem","Varanda","Jardim","Piscina","Escada","Sótão","Porão","Corredor","Lavanderia","Cafeteira","Torradeira","Aspirador","Ferro de passar","Vassoura","Rodo","Balde","Esponja","Sabão","Cômoda","Escrivaninha","Estante","Prateleira","Criado-mudo","Baú","Vaso de planta","Aquário","Pia","Banheira","Chuveiro","Vaso sanitário","Chave","Fechadura","Campainha","Extintor","Furadeira","Martelo","Chave de fenda","Alicate","Fita métrica","Serra","Parafuso","Prego","Tinta","Rolo de pintura","Escada de mão"]},
-  {id:8,cat:"🚗 Transporte",words:["Carro","Moto","Bicicleta","Ônibus","Trem","Metrô","Avião","Helicóptero","Barco","Navio","Caminhão","Táxi","Van","Trailer","Balão","Foguete","Canoa","Lancha","Submarino","Bonde","Teleférico","Patinete","Triciclo","Trator","Guindaste","Ambulância","Jetski","Catamarã","Dirigível","Monorail","Segway","Hidroavião","Carruagem","Carro elétrico","Carro híbrido","Drone de carga","Maglev","Trem-bala","Jatinho","Planador","Parapente","Asa delta","Paraquedas","Hoverboard","Skate elétrico","Vespa","Sidecar","Quadriciclo","Buggy","Jipe","Caminhonete","Perua","Minivan","SUV","Pickup","Furgão","Tuk-tuk","Riquixá","Gondola","Carro de bombeiros","Viatura policial"]},
-  {id:9,cat:"📱 Tecnologia",words:["Celular","Computador","Tablet","Notebook","Fone","Câmera","Impressora","Roteador","Pendrive","Mouse","Teclado","Monitor","Webcam","Projetor","Smartwatch","Drone","Alexa","Google","Netflix","Instagram","YouTube","WhatsApp","Spotify","TikTok","Facebook","Zoom","ChatGPT","Bitcoin","App","Podcast","E-mail","Wi-fi","Bluetooth","GPS","QR code","Inteligência artificial","Cloud","Streaming","Realidade virtual","Realidade aumentada","Metaverso","Blockchain","Criptomoeda","Algoritmo","Código","Programação","Python","JavaScript","API","Backend","Frontend","DevOps","Git","Deploy","Server","Database","Cache","Firewall","VPN","Antivírus","Backup","RAM","Processador","SSD","GPU","USB","5G","Satélite","Fibra óptica","Smarttv","Videogame"]},
-  {id:10,cat:"👗 Roupas",words:["Camiseta","Calça","Vestido","Saia","Jaqueta","Casaco","Suéter","Blusa","Shorts","Bermuda","Biquíni","Meia","Pijama","Roupão","Uniforme","Terno","Gravata","Blazer","Moletom","Legging","Calça jeans","Polo","Capa de chuva","Luva","Cachecol","Gorro","Boné","Chapéu","Óculos","Cinto","Bolsa","Mochila","Tênis","Bota","Sandália","Chinelo","Sapato","Sapatilha","Colete","Jardineira","Macacão","Cropped","Top","Kimono","Poncho","Sari","Hanbok","Kilt","Turbante","Balaclava","Sunga","Maiô","Fantasia","Cosplay","Streetwear","Athleisure","Y2K","Dark academia","Cottagecore","Normcore","Punk","Grunge","Preppy","Boho","Minimalista","Oversized","Slim fit","Alfaiataria"]},
-  {id:11,cat:"💼 Profissões",words:["Médico","Professor","Engenheiro","Advogado","Arquiteto","Policial","Bombeiro","Enfermeiro","Dentista","Psicólogo","Jornalista","Chef","Motorista","Piloto","Ator","Cantor","Fotógrafo","Designer","Programador","Cientista","Biólogo","Físico","Astronauta","Veterinário","Fazendeiro","Mecânico","Eletricista","Padeiro","Contador","Gerente","Garçom","Segurança","Porteiro","Recepcionista","Personal trainer","Coach","Influencer","Youtuber","DJ","Produtor","Cineasta","Roteirista","Dublador","Animador","Ilustrador","Tatuador","Maquiador","Cabeleireiro","Fisioterapeuta","Nutricionista","Fonoaudiólogo","Terapeuta","Assistente social","Pedagogo","Filósofo","Sociólogo","Arqueólogo","Oceanógrafo","Meteorologista","Químico","Matemático","Economista","CEO","CTO","Startup","Freelancer","Gamer profissional","Streamer","Árbitro"]},
-  {id:12,cat:"🌿 Natureza",words:["Árvore","Flor","Rio","Mar","Montanha","Vulcão","Floresta","Deserto","Geleira","Cachoeira","Lago","Oceano","Ilha","Caverna","Praia","Neve","Chuva","Trovão","Arco-íris","Neblina","Granizo","Tornado","Sol","Lua","Estrela","Nuvem","Pedra","Areia","Musgo","Cogumelo","Rosa","Girassol","Orquídea","Bambu","Cacto","Samambaia","Palmeira","Pinheiro","Carvalho","Sequoia","Vitória régia","Mangue","Cerrado","Caatinga","Pantanal","Amazônia","Mata Atlântica","Savana","Tundra","Pradaria","Pântano","Recife de coral","Atol","Arquipélago","Falésia","Dunas","Salinas","Gêiser","Gruta","Estalactite","Cristal","Mineral","Fóssil","Delta","Corredeira","Nascente","Aquífero","Tsunami","Furacão","Terremoto"]},
-  {id:13,cat:"🎉 Festas",words:["Aniversário","Casamento","Formatura","Natal","Carnaval","Réveillon","Páscoa","Festa Junina","Halloween","Churrasco","Piquenique","Balada","Karaokê","Bingo","Bolo","Vela","Parabéns","Confete","Balão","Fogos","Salgadinho","Cerveja","Caipirinha","Chopp","Champanhe","Vinho","Brinde","Convite","Decoração","Fantasia","Máscara","Dança","DJ","Fogueira","Quadrilha","Amigo secreto","Ovo de Páscoa","Panetone","Presente","Laço","Embrulho","Surpresa","Serpentina","Maracá","Apito","Maquiagem","Peruca","Nariz de palhaço","Chapéu de festa","Papai Noel","Coelhinho","Fantasma","Bruxa","Vampiro","Princesa","Pirata","Ninja","Astronauta","Unicórnio","Sereia","Dragão","Chá de bebê","Chá de revelação","Pré-casamento","Despedida de solteiro"]},
-  {id:14,cat:"🏖️ Lugares",words:["Praia","Parque","Shopping","Cinema","Teatro","Museu","Biblioteca","Hospital","Escola","Igreja","Restaurante","Bar","Café","Padaria","Supermercado","Farmácia","Banco","Aeroporto","Rodoviária","Estádio","Academia","Hotel","Camping","Sítio","Fazenda","Zoológico","Aquário","Planetário","Circo","Feira","Mercado","Praça","Jardim botânico","Parque aquático","Boate","Sorveteria","Pizzaria","Churrascaria","Hamburgueria","Sushiaria","Food court","Mercado municipal","Brechó","Galeria de arte","Arena","Kartódromo","Autódromo","Ginásio","Quadra","Parque de skate","Boliche","Laser tag","Escape room","Paintball","Parque de diversões","Tirolesa","Arvorismo","Morro","Cachoeira","Caverna","Mirante","Cais","Porto","Marina","Farol","Ilha","Parque nacional"]},
-  {id:15,cat:"🎮 Games",words:["Minecraft","Fortnite","Roblox","GTA","Mario","Zelda","Pokemon","FIFA","Free Fire","Valorant","Among Us","Fall Guys","Overwatch","Call of Duty","League of Legends","Tetris","Pac-Man","Sonic","Street Fighter","Mortal Kombat","Resident Evil","Final Fantasy","The Sims","Skyrim","God of War","Spider-Man","Cyberpunk","Dark Souls","Hollow Knight","Stardew Valley","Clash of Clans","Candy Crush","Subway Surfers","Temple Run","Flappy Bird","Snake","Pong","Space Invaders","Donkey Kong","Mega Man","Crash Bandicoot","Halo","Mass Effect","Witcher","Red Dead Redemption","Assassin's Creed","Far Cry","Counter Strike","Dota","Hearthstone","Warcraft","Diablo","Apex Legends","Warzone","PUBG","Rust","ARK","Terraria","Cuphead","Celeste","Hades","Dead Cells","Undertale","Omori","Disco Elysium","Uncharted","Horizon","Overcooked","It Takes Two","Elden Ring"]},
-];
-
-// ── ESTADO LOCAL ──────────────────────────────────────────────────────────────
-const G={page:'hub',nameInput:'',codeInput:'',error:'',loading:false,roomCode:'',myName:'',isHost:false,wordRevealed:false,myVote:null,impostorGuess:''};
-let gs=null,roomRef=null,unsubGame=null,timerInt=null,timerVal=0,advancing=false;
+const db=firebase.database();
 
 // ── UTILS ─────────────────────────────────────────────────────────────────────
 function rand(a){return a[Math.floor(Math.random()*a.length)];}
 function randCode(){const L='ABCDEFGHJKLMNPQRSTUVWXYZ';return[0,1,2,3].map(()=>rand(L)).join('');}
 function esc(s){return String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
-function themeById(id){return THEMES.find(t=>t.id===id);}
 const COLORS=['#7c4dff','#00e5ff','#ff4081','#69f0ae','#ffab40','#40c4ff','#ea80fc','#ccff90','#ff6e6e','#ffd740'];
 function aC(n){let h=0;for(const c of String(n))h=(h*31+c.charCodeAt(0))%COLORS.length;return COLORS[h];}
 const EMOJIS=['😀','😎','🤠','🧐','🤩','😏','🤔','😤','🥸','🤪','😈','👻','🤖','🎭','🦊','🐯','🦁','🐸','🐧','🦄'];
 function aE(n){let h=0;for(const c of String(n))h=(h*31+c.charCodeAt(0))%EMOJIS.length;return EMOJIS[h];}
 function init2(n){return String(n).trim().slice(0,2).toUpperCase();}
-function players(){return Object.keys(gs?.players||{});}
-function pData(n){return gs?.players?.[n]||{};}
 
-// ── SYNC COM FIREBASE ─────────────────────────────────────────────────────────
-function onGameState(snap){
-  const prev=gs?.phase;
-  gs=snap.val();
-  if(!gs){
-    if(!G.isHost){cleanLeave();}
-    return;
-  }
+// ── ESTADO GLOBAL ─────────────────────────────────────────────────────────────
+// G.page: 'hub' | 'imp-home' | 'imp-lobby' | 'imp-game' | 'cn-home' | 'cn-lobby' | 'cn-game'
+const G={page:'hub',error:'',loading:false};
+
+// ═══════════════════════════════════════════════════════════════════
+//  JOGO 1: QUEM É O IMPOSTOR?
+// ═══════════════════════════════════════════════════════════════════
+
+const THEMES=[
+  {id:1,cat:"🍕 Comida",words:["Pizza","Sushi","Hambúrguer","Macarrão","Frango","Bife","Salada","Sopa","Arroz","Feijão","Pão","Queijo","Ovo","Batata","Cenoura","Tomate","Cebola","Peixe","Camarão","Bacon","Linguiça","Torta","Bolo","Biscoito","Iogurte","Manteiga","Geleia","Mel","Chocolate","Sorvete","Pipoca","Nugget","Hot-dog","Crepe","Tapioca","Açaí","Pamonha","Coxinha","Pastel","Esfirra","Brigadeiro","Mousse","Pudim","Pão de queijo","Empada","Lasanha","Strogonoff","Churros","Waffle","Panqueca","Yakisoba","Temaki","Ramen","Curry","Falafel","Paella","Risoto","Gnocchi","Ravioli","Croissant","Muffin","Cupcake","Brownie","Cookie","Tiramisu","Cheesecake","Granola","Tacos","Burrito","Gyoza","Pad Thai","Kebab","Shawarma","Fondue","Quindim","Bolinho de chuva","Focaccia","Baguete","Macaron","Donuts"]},
+  {id:2,cat:"🐾 Animais",words:["Cachorro","Gato","Leão","Elefante","Cobra","Macaco","Cavalo","Vaca","Galinha","Porco","Papagaio","Tartaruga","Coelho","Pinguim","Girafa","Hipopótamo","Crocodilo","Tigre","Urso","Lobo","Raposa","Rato","Pombo","Águia","Tubarão","Polvo","Borboleta","Abelha","Formiga","Aranha","Sapo","Pato","Golfinho","Baleia","Rinoceronte","Canguru","Koala","Panda","Zebra","Flamingo","Camelo","Capivara","Tamanduá","Onça","Guepardo","Leopardo","Hiena","Alce","Javali","Tatu","Preguiça","Morcego","Coruja","Tucano","Arara","Colibri","Pavão","Avestruz","Pelicano","Garça","Foca","Manta","Piranha","Lula","Lagosta","Caranguejo","Caramujo","Besouro","Libelula","Peixe palhaço"]},
+  {id:3,cat:"⚽ Esportes",words:["Futebol","Basquete","Vôlei","Natação","Tênis","Boxe","Judô","Ciclismo","Ginástica","Golfe","Rugby","Handebol","Surfe","Skate","Corrida","Mergulho","Badminton","Esgrima","Caratê","Taekwondo","Luta livre","Maratona","Triatlo","Remo","Hipismo","Hóquei","Beisebol","Crossfit","Yoga","Pilates","Escalada","Snowboard","Ski","Atletismo","Canoagem","Vela","Parkour","Capoeira","Polo aquático","Nado sincronizado","Patinação","Halterofilismo","Arco e flecha","Tiro esportivo","Biatlo","Curling","Pentatlo","Americano","Cricket","Polo","Lacrosse","Peteca","Bilhar","Snooker","Dardos","MMA","Jiu jitsu","Muay thai","Kickboxing","Sumô","Kung fu"]},
+  {id:4,cat:"🌍 Países",words:["Brasil","EUA","China","Japão","França","Alemanha","Itália","Espanha","México","Argentina","Rússia","Canadá","Austrália","Índia","Portugal","Holanda","Suécia","Noruega","Turquia","Egito","Marrocos","Tailândia","Coreia do Sul","Vietnã","Cuba","Peru","Chile","Colômbia","Venezuela","Bolívia","Equador","Paraguai","Uruguai","Polônia","Grécia","Israel","Paquistão","Nigéria","Quênia","Etiópia","África do Sul","Tanzânia","Gana","Angola","Moçambique","Indonésia","Malásia","Filipinas","Singapura","Bangladesh","Nepal","Myanmar","Mongólia","Cazaquistão","Irã","Iraque","Síria","Jordânia","Kuwait","Emirados","Suíça","Áustria","Bélgica","Dinamarca","Finlândia","Hungria","Romênia","Bulgária","Croácia","Nova Zelândia","Islândia"]},
+  {id:5,cat:"🎬 Cinema",words:["Comédia","Terror","Ação","Drama","Romance","Animação","Documentário","Ficção Científica","Aventura","Suspense","Musical","Fantasia","Guerra","Crime","Espionagem","Super-herói","Zumbi","Vampiro","Faroeste","Thriller","Policial","Western","Noir","Biopic","Cult","Anime","Telenovela","Reality","Stand-up","Sitcom","Comédia romântica","Épico","Indie","Found footage","Cyberpunk","Post-apocalíptico","Distopia","Ficção histórica","Sobrenatural","Paranormal","Exorcismo","Alien","Robô","Viagem no tempo","Universo paralelo","Fuga","Heist","Espião","Kung Fu","Samurai","Pirata","Viking","Gladiador","Esporte","Música","Dança","Circo","Magia"]},
+  {id:6,cat:"🎵 Música",words:["Violão","Guitarra","Piano","Bateria","Flauta","Violino","Saxofone","Trompete","Baixo","Teclado","Rock","Samba","Funk","Jazz","Pop","MPB","Reggae","Hip-hop","Forró","Pagode","Axé","Sertanejo","Metal","Blues","Gospel","Rap","R&B","Eletrônico","Country","Clássico","Bossa Nova","Drum and bass","Techno","House","Trap","Baile funk","Frevo","Chorinho","Maracatu","Heavy metal","Punk","Hardcore","Grunge","Alternative","Indie rock","Folk","Soul","Disco","New wave","Shoegaze","Ambient","Lofi","Vaporwave","Synthwave","K-pop","J-pop","Afrobeat","Cumbia","Merengue","Salsa","Bachata","Tango","Samba reggae","Piseiro","Brega funk"]},
+  {id:7,cat:"🏠 Casa",words:["Sofá","Mesa","Cadeira","Cama","Geladeira","Fogão","Televisão","Janela","Porta","Armário","Espelho","Tapete","Cortina","Lâmpada","Ventilador","Micro-ondas","Liquidificador","Banheiro","Cozinha","Sala","Quarto","Garagem","Varanda","Jardim","Piscina","Escada","Sótão","Porão","Corredor","Lavanderia","Cafeteira","Torradeira","Aspirador","Ferro de passar","Vassoura","Rodo","Balde","Esponja","Sabão","Cômoda","Escrivaninha","Estante","Prateleira","Criado-mudo","Baú","Vaso de planta","Aquário","Pia","Banheira","Chuveiro","Vaso sanitário","Chave","Fechadura","Campainha","Extintor","Furadeira","Martelo","Chave de fenda","Alicate","Fita métrica","Serra","Parafuso","Prego","Tinta","Rolo de pintura"]},
+  {id:8,cat:"📱 Tecnologia",words:["Celular","Computador","Tablet","Notebook","Fone","Câmera","Impressora","Roteador","Pendrive","Mouse","Teclado","Monitor","Webcam","Projetor","Smartwatch","Drone","Alexa","Google","Netflix","Instagram","YouTube","WhatsApp","Spotify","TikTok","Facebook","Zoom","ChatGPT","Bitcoin","App","Podcast","E-mail","Wi-fi","Bluetooth","GPS","QR code","Inteligência artificial","Cloud","Streaming","Realidade virtual","Realidade aumentada","Metaverso","Blockchain","Criptomoeda","Algoritmo","Código","Programação","Python","JavaScript","API","Backend","Frontend","DevOps","Git","Deploy","Server","Database","Cache","Firewall","VPN","Antivírus","Backup","RAM","Processador","SSD","GPU","USB","5G","Satélite","Fibra óptica","Smarttv","Videogame"]},
+  {id:9,cat:"🎉 Festas",words:["Aniversário","Casamento","Formatura","Natal","Carnaval","Réveillon","Páscoa","Festa Junina","Halloween","Churrasco","Piquenique","Balada","Karaokê","Bingo","Bolo","Vela","Parabéns","Confete","Balão","Fogos","Salgadinho","Cerveja","Caipirinha","Chopp","Champanhe","Vinho","Brinde","Convite","Decoração","Fantasia","Máscara","Dança","DJ","Fogueira","Quadrilha","Amigo secreto","Ovo de Páscoa","Panetone","Presente","Laço","Embrulho","Surpresa","Serpentina","Chapéu de festa","Papai Noel","Coelhinho","Fantasma","Bruxa","Vampiro","Princesa","Pirata","Ninja","Astronauta","Unicórnio","Sereia","Dragão","Chá de bebê","Chá de revelação","Despedida de solteiro"]},
+  {id:10,cat:"🎮 Games",words:["Minecraft","Fortnite","Roblox","GTA","Mario","Zelda","Pokemon","FIFA","Free Fire","Valorant","Among Us","Fall Guys","Overwatch","Call of Duty","League of Legends","Tetris","Pac-Man","Sonic","Street Fighter","Mortal Kombat","Resident Evil","Final Fantasy","The Sims","Skyrim","God of War","Spider-Man","Cyberpunk","Dark Souls","Hollow Knight","Stardew Valley","Clash of Clans","Candy Crush","Subway Surfers","Temple Run","Flappy Bird","Snake","Pong","Space Invaders","Donkey Kong","Mega Man","Crash Bandicoot","Halo","Mass Effect","Witcher","Red Dead Redemption","Assassin's Creed","Far Cry","Counter Strike","Dota","Hearthstone","Warcraft","Diablo","Apex Legends","Warzone","PUBG","Rust","ARK","Terraria","Cuphead","Celeste","Hades","Dead Cells","Undertale","Omori","Disco Elysium","Uncharted","Horizon","Overcooked","It Takes Two","Elden Ring"]},
+];
+
+const IMP={nameInput:'',codeInput:'',roomCode:'',myName:'',isHost:false,wordRevealed:false,myVote:null,impostorGuess:''};
+let gs=null,roomRef=null,unsubGame=null,timerInt=null,timerVal=0,advancing=false;
+
+function themeById(id){return THEMES.find(t=>t.id===id);}
+function impPlayers(){return Object.keys(gs?.players||{});}
+function impPD(n){return gs?.players?.[n]||{};}
+
+function onImpState(snap){
+  const prev=gs?.phase;gs=snap.val();
+  if(!gs){if(!IMP.isHost)impCleanLeave();return;}
   if(gs.phase!==prev){
-    G.wordRevealed=false;G.myVote=null;advancing=false;
-    if(gs.phase==='discussion')startTimer();
-    else clearInterval(timerInt);
+    IMP.wordRevealed=false;IMP.myVote=null;advancing=false;
+    if(gs.phase==='discussion')impStartTimer();else clearInterval(timerInt);
   }
-  // host: auto-avança quando todos votaram
-  if(G.isHost&&gs.phase==='voting'&&!advancing){
-    const names=players();
-    if(names.length>1&&names.every(n=>pData(n).vote)){hostResult();}
+  if(IMP.isHost&&gs.phase==='voting'&&!advancing){
+    const names=impPlayers();
+    if(names.length>1&&names.every(n=>impPD(n).vote))impHostResult();
   }
-  // host: processa palpite do impostor
-  if(G.isHost&&gs.phase==='results'&&gs.result?.caught&&gs.result?.impostorGuess==null){
+  if(IMP.isHost&&gs.phase==='results'&&gs.result?.caught&&gs.result?.impostorGuess==null){
     const imp=gs.impostorName;
-    if(imp&&pData(imp).impostorGuess!=null){
-      const guess=pData(imp).impostorGuess;
-      const correct=(gs.word||'').toLowerCase()===guess.toLowerCase();
-      const ns={...gs.scores||{}};
-      if(correct)ns[imp]=(ns[imp]||0)+3;
+    if(imp&&impPD(imp).impostorGuess!=null){
+      const guess=impPD(imp).impostorGuess,correct=(gs.word||'').toLowerCase()===guess.toLowerCase();
+      const ns={...gs.scores||{}};if(correct)ns[imp]=(ns[imp]||0)+3;
       roomRef.update({'result/impostorGuess':guess,'result/impostorGuessCorrect':correct,scores:ns});
     }
   }
   render();
 }
 
-function startTimer(){
+function impStartTimer(){
   clearInterval(timerInt);
   const tick=()=>{
-    timerVal=Math.max(0,Math.ceil(((gs?.discEnd||0)-Date.now())/1000));
-    render();
-    if(timerVal<=0){
-      clearInterval(timerInt);
-      if(G.isHost&&gs?.phase==='discussion'&&!advancing){
-        advancing=true;
-        roomRef.update({phase:'voting',discEnd:0}).finally(()=>{advancing=false;});
+    timerVal=Math.max(0,Math.ceil(((gs?.discEnd||0)-Date.now())/1000));render();
+    if(timerVal<=0){clearInterval(timerInt);
+      if(IMP.isHost&&gs?.phase==='discussion'&&!advancing){
+        advancing=true;roomRef.update({phase:'voting',discEnd:0}).finally(()=>{advancing=false;});
       }
     }
   };
   timerInt=setInterval(tick,500);tick();
 }
 
-// ── AÇÕES DO HOST ─────────────────────────────────────────────────────────────
-async function hostStart(){
-  const names=players();
-  if(names.length<2){G.error='Precisa de pelo menos 2 jogadores!';render();return;}
+async function impHostStart(){
+  const names=impPlayers();if(names.length<2){G.error='Precisa de pelo menos 2 jogadores!';render();return;}
   const t=rand(THEMES),w=rand(t.words),imp=rand(names),round=(gs?.round||0)+1;
-  const playerData={};
-  names.forEach(n=>{playerData[n]={...pData(n),ready:false,vote:null,impostorGuess:null};});
-  await roomRef.update({phase:'word',themeId:t.id,word:w,impostorName:imp,discEnd:0,round,result:null,players:playerData});
+  const pd={};names.forEach(n=>{pd[n]={...impPD(n),ready:false,vote:null,impostorGuess:null};});
+  await roomRef.update({phase:'word',themeId:t.id,word:w,impostorName:imp,discEnd:0,round,result:null,players:pd});
 }
-async function hostDiscuss(){await roomRef.update({phase:'discussion',discEnd:Date.now()+180000});}
-async function hostResult(){
+async function impHostDiscuss(){await roomRef.update({phase:'discussion',discEnd:Date.now()+180000});}
+async function impHostResult(){
   if(advancing)return;advancing=true;
   try{
-    const names=players();
-    const counts={};
-    names.forEach(n=>{const v=pData(n).vote;if(v)counts[v]=(counts[v]||0)+1;});
-    let top=0,elim=null;
-    for(const[n,c]of Object.entries(counts)){if(c>top){top=c;elim=n;}}
-    const caught=elim===gs.impostorName;
-    const ns={...gs.scores||{}};
+    const names=impPlayers(),counts={};
+    names.forEach(n=>{const v=impPD(n).vote;if(v)counts[v]=(counts[v]||0)+1;});
+    let top=0,elim=null;for(const[n,c]of Object.entries(counts)){if(c>top){top=c;elim=n;}}
+    const caught=elim===gs.impostorName,ns={...gs.scores||{}};
     names.forEach(n=>{if(!(n in ns))ns[n]=0;});
-    if(caught){names.forEach(n=>{if(n!==gs.impostorName)ns[n]=(ns[n]||0)+1;});}
+    if(caught)names.forEach(n=>{if(n!==gs.impostorName)ns[n]=(ns[n]||0)+1;});
     else if(gs.impostorName)ns[gs.impostorName]=(ns[gs.impostorName]||0)+2;
     await roomRef.update({phase:'results',scores:ns,result:{caught,eliminated:elim,counts,impostorName:gs.impostorName,word:gs.word}});
   }finally{advancing=false;}
 }
+async function impSetReady(){IMP.wordRevealed=true;await roomRef.child('players/'+IMP.myName).update({ready:true});render();}
+async function impCastVote(name){if(IMP.myVote)return;IMP.myVote=name;await roomRef.child('players/'+IMP.myName).update({vote:name});render();}
+async function impSendGuess(){const g=IMP.impostorGuess.trim();if(!g)return;await roomRef.child('players/'+IMP.myName).update({impostorGuess:g});IMP.impostorGuess='';render();}
 
-// ── AÇÕES DOS JOGADORES ───────────────────────────────────────────────────────
-async function setReady(){
-  G.wordRevealed=true;
-  await roomRef.child('players/'+G.myName).update({ready:true});
-  render();
-}
-async function castVote(name){
-  if(G.myVote)return;
-  G.myVote=name;
-  await roomRef.child('players/'+G.myName).update({vote:name});
-  render();
-}
-async function sendGuess(){
-  const g=G.impostorGuess.trim();if(!g)return;
-  await roomRef.child('players/'+G.myName).update({impostorGuess:g});
-  G.impostorGuess='';render();
-}
-
-// ── ENTRAR / CRIAR SALA ───────────────────────────────────────────────────────
-async function joinGame(code,name,asHost){
+async function impJoin(code,name,asHost){
   G.loading=true;G.error='';render();
   try{
     const ref=db.ref('rooms/'+code.toLowerCase());
     if(asHost){
-      await ref.set({phase:'lobby',themeId:null,word:'',impostorName:null,discEnd:0,
-        round:0,scores:{},result:null,hostName:name,
+      await ref.set({phase:'lobby',themeId:null,word:'',impostorName:null,discEnd:0,round:0,scores:{},result:null,hostName:name,
         players:{[name]:{isHost:true,ready:false,vote:null,impostorGuess:null,joinedAt:Date.now()}}});
     }else{
       const snap=await ref.once('value');
-      if(!snap.exists()){G.loading=false;G.error='Sala não encontrada! Verifique o código.';render();return;}
+      if(!snap.exists()){G.loading=false;G.error='Sala não encontrada!';render();return;}
       const d=snap.val();
-      if(d.players&&d.players[name]){G.loading=false;G.error='Este nome já está em uso nesta sala!';render();return;}
-      if(d.phase&&d.phase!=='lobby'){G.loading=false;G.error='O jogo já começou nesta sala.';render();return;}
+      if(d.players&&d.players[name]){G.loading=false;G.error='Nome já em uso nesta sala!';render();return;}
+      if(d.phase&&d.phase!=='lobby'){G.loading=false;G.error='O jogo já começou!';render();return;}
       await ref.child('players/'+name).set({isHost:false,ready:false,vote:null,impostorGuess:null,joinedAt:Date.now()});
     }
-    G.roomCode=code.toUpperCase();G.myName=name;G.isHost=asHost;
-    G.loading=false;G.page='lobby';roomRef=ref;
-    // Remove jogador automaticamente ao fechar o navegador
+    IMP.roomCode=code.toUpperCase();IMP.myName=name;IMP.isHost=asHost;
+    G.loading=false;G.page='imp-lobby';roomRef=ref;
     ref.child('players/'+name).onDisconnect().remove();
-    unsubGame=ref.on('value',onGameState);
-    render();
-  }catch(e){
-    console.error(e);
-    G.loading=false;
-    G.error='Não foi possível conectar. Verifique sua internet.';
-    render();
-  }
+    unsubGame=ref.on('value',onImpState);render();
+  }catch(e){G.loading=false;G.error='Não foi possível conectar.';render();}
 }
-async function createRoom(){
-  const name=(G.nameInput||'').trim();
-  if(!name){G.error='Digite seu nome primeiro!';render();return;}
-  if(name.length>20){G.error='Nome muito longo (máx 20 caracteres)!';render();return;}
-  await joinGame(randCode(),name,true);
+async function impCreate(){
+  const n=(IMP.nameInput||'').trim();
+  if(!n){G.error='Digite seu nome!';render();return;}
+  await impJoin(randCode(),n,true);
 }
-async function enterRoom(){
-  const name=(G.nameInput||'').trim(),code=(G.codeInput||'').trim().toUpperCase();
-  if(!name){G.error='Digite seu nome primeiro!';render();return;}
-  if(!code||code.length!==4){G.error='O código deve ter 4 letras!';render();return;}
-  await joinGame(code,name,false);
+async function impEnter(){
+  const n=(IMP.nameInput||'').trim(),c=(IMP.codeInput||'').trim().toUpperCase();
+  if(!n){G.error='Digite seu nome!';render();return;}
+  if(!c||c.length!==4){G.error='Código deve ter 4 letras!';render();return;}
+  await impJoin(c,n,false);
 }
-async function cleanLeave(){
+async function impCleanLeave(){
   clearInterval(timerInt);
   if(roomRef&&unsubGame){roomRef.off('value',unsubGame);unsubGame=null;}
   roomRef=null;gs=null;
-  G.roomCode='';G.myName='';G.isHost=false;
-  G.myVote=null;G.wordRevealed=false;G.error='';advancing=false;G.impostorGuess='';
-  G.page='hub';render();
+  IMP.roomCode='';IMP.myName='';IMP.isHost=false;IMP.myVote=null;IMP.wordRevealed=false;IMP.impostorGuess='';
+  advancing=false;G.error='';G.page='hub';render();
 }
-async function leaveRoom(){
+async function impLeave(){
   if(roomRef){
-    if(G.isHost){await roomRef.remove().catch(()=>{});}
-    else{
-      roomRef.child('players/'+G.myName).onDisconnect().cancel();
-      await roomRef.child('players/'+G.myName).remove().catch(()=>{});
-    }
+    if(IMP.isHost)await roomRef.remove().catch(()=>{});
+    else{roomRef.child('players/'+IMP.myName).onDisconnect().cancel();await roomRef.child('players/'+IMP.myName).remove().catch(()=>{});}
   }
-  await cleanLeave();
+  await impCleanLeave();
 }
 
-// ── RENDER ────────────────────────────────────────────────────────────────────
-const app=document.getElementById('app');
-function render(){
-  if(G.page==='hub')return rHub();
-  if(G.page==='home')return rHome();
-  rGame();
-}
-function rHub(){
-  app.innerHTML=`<div class="page active">
-  <div class="hub-header">
-    <div class="hub-logo">🎮 GameHub</div>
-    <div class="hub-sub">Jogos para jogar com seus amigos</div>
-  </div>
-  <div class="games-grid">
-    <div class="game-card live" onclick="G.page='home';G.error='';G.nameInput='';G.codeInput='';render()">
-      <div class="card-icon">🕵️</div>
-      <div class="card-name">Quem é o Impostor?</div>
-    </div>
-    <div class="game-card soon"><div class="soon-badge">Em Breve</div><div class="card-icon">🔐</div><div class="card-name">Codinomes</div></div>
-    <div class="game-card soon"><div class="soon-badge">Em Breve</div><div class="card-icon">📝</div><div class="card-name">Quem Sou Eu?</div></div>
-    <div class="game-card soon"><div class="soon-badge">Em Breve</div><div class="card-icon">🎨</div><div class="card-name">Gartic Phone</div></div>
-  </div>
-</div>`;
-}
-function rHome(){
+// ─── IMPOSTOR RENDER ──────────────────────────────────────────────
+function rImpHome(){
   app.innerHTML=`<div class="page active"><div class="screen" style="padding-top:40px">
-  <button class="back" onclick="G.page='hub';render()">← Voltar</button>
+  <button class="back" onclick="G.page='hub';G.error='';render()">← Voltar</button>
   <div style="font-size:2.2rem;margin-bottom:8px">🕵️</div>
   <div class="title">Quem é o Impostor?</div>
   <div class="subtitle">Um impostor se infiltrou no grupo. Descubra-o!</div>
   ${G.error?`<div class="alert">${esc(G.error)}</div>`:''}
   <input class="input" id="ni" type="text" placeholder="Seu nome" maxlength="20"
-    value="${esc(G.nameInput||'')}" oninput="G.nameInput=this.value" autocomplete="off"/>
-  <button class="btn btn-primary" onclick="createRoom()" ${G.loading?'disabled':''}>
-    ${G.loading?'Criando sala<span class="dots"></span>':'✨ Criar Nova Sala'}
-  </button>
-  <div class="divider"><div class="divider-line"></div><span class="divider-text">ou entre em uma sala existente</span><div class="divider-line"></div></div>
+    value="${esc(IMP.nameInput)}" oninput="IMP.nameInput=this.value" autocomplete="off"/>
+  <button class="btn btn-primary" onclick="impCreate()" ${G.loading?'disabled':''}>
+    ${G.loading?'Criando<span class="dots"></span>':'✨ Criar Nova Sala'}</button>
+  <div class="divider"><div class="divider-line"></div><span class="divider-text">ou entre em sala existente</span><div class="divider-line"></div></div>
   <input class="input" type="text" placeholder="Código da sala (ex: ABCD)" maxlength="4"
-    value="${esc(G.codeInput||'')}" oninput="G.codeInput=this.value.toUpperCase()"
+    value="${esc(IMP.codeInput)}" oninput="IMP.codeInput=this.value.toUpperCase()"
     style="text-transform:uppercase;letter-spacing:.18em;font-size:1.2rem;text-align:center" autocomplete="off"/>
-  <button class="btn btn-secondary" onclick="enterRoom()" ${G.loading?'disabled':''}>🚪 Entrar na Sala</button>
+  <button class="btn btn-secondary" onclick="impEnter()" ${G.loading?'disabled':''}>🚪 Entrar na Sala</button>
 </div></div>`;
   setTimeout(()=>document.getElementById('ni')?.focus(),50);
 }
-function rGame(){
+function rImpGame(){
   const ph=gs?.phase||'lobby';
-  if(ph==='word')return rWord();
-  if(ph==='discussion')return rDiscuss();
-  if(ph==='voting')return rVote();
-  if(ph==='results')return rResults();
-  return rLobby();
+  if(ph==='word')return rImpWord();
+  if(ph==='discussion')return rImpDiscuss();
+  if(ph==='voting')return rImpVote();
+  if(ph==='results')return rImpResults();
+  return rImpLobby();
 }
-function rLobby(){
-  const names=players();
-  const shareUrl=location.href;
+function rImpLobby(){
+  const names=impPlayers();
   app.innerHTML=`<div class="page active"><div class="screen" style="padding-top:28px">
-  <button class="back" onclick="leaveRoom()">← Sair</button>
+  <button class="back" onclick="impLeave()">← Sair</button>
   <div class="code-box">
-    <div style="color:var(--muted);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase">Código da Sala</div>
-    <div class="code-big">${G.roomCode}</div>
-    <div class="code-hint">Compartilhe com seus amigos</div>
+    <div style="color:var(--muted);font-size:.75rem;text-transform:uppercase">Código da Sala</div>
+    <div class="code-big">${IMP.roomCode}</div>
     <button class="btn btn-secondary btn-sm" style="max-width:200px;margin:10px auto 0"
-      onclick="navigator.clipboard?.writeText('${esc(shareUrl)}');this.textContent='✅ Link copiado!'">📋 Copiar link</button>
+      onclick="navigator.clipboard?.writeText(location.href);this.textContent='✅ Copiado!'">📋 Copiar link</button>
   </div>
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-    <div style="font-weight:700">Jogadores (${names.length})</div>
-    ${!G.isHost?'<div style="color:var(--muted);font-size:.78rem">Aguardando host<span class="dots"></span></div>':''}
-  </div>
+  <div style="font-weight:700;margin-bottom:10px">Jogadores (${names.length})</div>
   <div class="player-list">${names.map(n=>`<div class="player-row">
     <div class="avatar" style="background:${aC(n)}">${init2(n)}</div>
     <div class="player-name">${esc(n)}</div>
-    <div class="badge ${n===G.myName?'you':(n===gs?.hostName?'host':'')}">${n===G.myName?'você':(n===gs?.hostName?'Host':'Jogador')}</div>
-  </div>`).join('')||'<div style="color:var(--muted);padding:14px;text-align:center">Aguardando jogadores<span class="dots"></span></div>'}</div>
+    <div class="badge ${n===IMP.myName?'you':(n===gs?.hostName?'host':'')}">${n===IMP.myName?'você':(n===gs?.hostName?'Host':'Jogador')}</div>
+  </div>`).join('')||'<div style="color:var(--muted);padding:14px;text-align:center">Aguardando<span class="dots"></span></div>'}</div>
   ${G.error?`<div class="alert">${esc(G.error)}</div>`:''}
-  ${G.isHost
-    ?`<button class="btn btn-primary" onclick="hostStart()" ${names.length<2?'disabled':''}>
-        ${names.length>=2?'🎮 Iniciar Jogo':'Aguardando pelo menos 2 jogadores'}
-      </button>`
-    :'<div class="status">Aguardando o host iniciar o jogo<span class="dots"></span></div>'
-  }
+  ${IMP.isHost?`<button class="btn btn-primary" onclick="impHostStart()" ${names.length<2?'disabled':''}>
+    ${names.length>=2?'🎮 Iniciar Jogo':'Aguardando pelo menos 2 jogadores'}</button>`
+    :'<div class="status">Aguardando o host iniciar<span class="dots"></span></div>'}
 </div></div>`;
 }
-function rWord(){
-  const names=players();
-  const isImp=G.myName===gs?.impostorName;
-  const t=gs?.themeId?themeById(gs.themeId):null;
-  const meReady=pData(G.myName).ready;
-  const readyCount=names.filter(n=>pData(n).ready).length;
+function rImpWord(){
+  const names=impPlayers(),isImp=IMP.myName===gs?.impostorName;
+  const t=gs?.themeId?themeById(gs.themeId):null,meReady=impPD(IMP.myName).ready;
+  const readyCount=names.filter(n=>impPD(n).ready).length;
   app.innerHTML=`<div class="page active"><div class="screen" style="padding-top:28px">
   <div style="text-align:center;margin-bottom:20px">
     <div style="color:var(--muted);font-size:.82rem">RODADA ${gs?.round||1} · ${t?.cat||''}</div>
     <div style="font-size:1.2rem;font-weight:800;margin-top:5px">Veja sua palavra em privado</div>
   </div>
-  ${G.wordRevealed
+  ${IMP.wordRevealed
     ?`<div class="word-card ${isImp?'impostor':''}">
-        ${isImp
-          ?`<div class="word-big" style="color:var(--red)">🎭</div>
-            <div style="font-size:1.1rem;font-weight:800;color:var(--red);margin-top:10px">Você é o IMPOSTOR!</div>
-            <div style="color:var(--muted);font-size:.85rem;margin-top:8px;line-height:1.5">Tema: <b>${esc(t?.cat||'')}</b><br>Descubra a palavra sem ser pego!</div>`
-          :`<div class="theme-lbl">${esc(t?.cat||'')}</div><div class="word-big">${esc(gs?.word||'')}</div>`
-        }
+        ${isImp?`<div class="word-big" style="color:var(--red)">🎭</div>
+          <div style="font-size:1.1rem;font-weight:800;color:var(--red);margin-top:10px">Você é o IMPOSTOR!</div>
+          <div style="color:var(--muted);font-size:.85rem;margin-top:8px;line-height:1.5">Tema: <b>${esc(t?.cat||'')}</b></div>`
+          :`<div class="theme-lbl">${esc(t?.cat||'')}</div><div class="word-big">${esc(gs?.word||'')}</div>`}
       </div>
-      ${!meReady
-        ?`<button class="btn btn-primary" onclick="setReady()">✅ Estou pronto</button>`
-        :`<div class="status">✅ Pronto! (${readyCount}/${names.length} prontos)</div>`
-      }
-      ${G.isHost?`<div class="host-panel"><div class="host-panel-title">👑 Host</div>
-        <button class="btn btn-primary btn-sm" onclick="hostDiscuss()">▶️ Iniciar Discussão (3 min)</button>
-      </div>`:''}
-      <button class="btn btn-secondary" onclick="G.wordRevealed=false;render()" style="margin-top:10px">🙈 Esconder</button>`
-    :`<div class="word-card tap" onclick="G.wordRevealed=true;render()">
+      ${!meReady?`<button class="btn btn-primary" onclick="impSetReady()">✅ Estou pronto</button>`
+        :`<div class="status">✅ Pronto! (${readyCount}/${names.length})</div>`}
+      ${IMP.isHost?`<div class="host-panel"><div class="host-panel-title">👑 Host</div>
+        <button class="btn btn-primary btn-sm" onclick="impHostDiscuss()">▶️ Iniciar Discussão (3 min)</button></div>`:''}
+      <button class="btn btn-secondary" onclick="IMP.wordRevealed=false;render()" style="margin-top:10px">🙈 Esconder</button>`
+    :`<div class="word-card tap" onclick="IMP.wordRevealed=true;render()">
         <div style="font-size:2rem;margin-bottom:10px">👁️</div>
         <div style="font-weight:700">Toque para ver sua palavra</div>
-        <div style="color:var(--muted);font-size:.82rem;margin-top:6px">Garanta que ninguém está olhando!</div>
-      </div>`
-  }
+        <div style="color:var(--muted);font-size:.82rem;margin-top:6px">Garanta que ninguém está olhando!</div></div>`}
   <div class="player-list" style="margin-top:16px">
     ${names.map(n=>`<div class="player-row" style="padding:8px 12px">
       <div class="avatar" style="background:${aC(n)};width:28px;height:28px;font-size:.72rem">${init2(n)}</div>
       <div class="player-name" style="font-size:.85rem">${esc(n)}</div>
-      <div class="badge ${pData(n).ready?'ready':''}">${pData(n).ready?'✅ Pronto':'Aguardando'}</div>
+      <div class="badge ${impPD(n).ready?'ready':''}">${impPD(n).ready?'✅ Pronto':'Aguardando'}</div>
     </div>`).join('')}
-  </div>
-</div></div>`;
+  </div></div></div>`;
 }
-function rDiscuss(){
-  const t=gs?.themeId?themeById(gs.themeId):null;
-  const urgent=timerVal<=30;
-  const mins=Math.floor(timerVal/60).toString().padStart(2,'0');
-  const secs=(timerVal%60).toString().padStart(2,'0');
+function rImpDiscuss(){
+  const t=gs?.themeId?themeById(gs.themeId):null,urgent=timerVal<=30;
+  const mins=Math.floor(timerVal/60).toString().padStart(2,'0'),secs=(timerVal%60).toString().padStart(2,'0');
   app.innerHTML=`<div class="page active"><div class="screen" style="padding-top:28px">
   <div style="text-align:center;margin-bottom:20px">
     <div style="font-size:1.6rem;font-weight:900">💬 Discussão</div>
@@ -446,82 +397,68 @@ function rDiscuss(){
     <div class="timer-num ${urgent?'urgent':''}">${mins}:${secs}</div>
     <div class="timer-label">Tempo restante — discutam sobre o tema!</div>
   </div>
-  <div style="background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r);padding:14px 16px;color:var(--muted);font-size:.85rem;line-height:1.6;margin-bottom:16px">
+  <div style="background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r);padding:14px;color:var(--muted);font-size:.85rem;line-height:1.6;margin-bottom:16px">
     💡 Façam perguntas sobre o tema. O impostor tentará disfarçar que não sabe a palavra exata.
   </div>
-  ${G.isHost
-    ?`<div class="host-panel"><div class="host-panel-title">👑 Host</div>
-      <button class="btn btn-secondary btn-sm" onclick="roomRef.update({phase:'voting',discEnd:0})">⏭️ Pular para Votação</button>
-    </div>`
-    :'<div class="status">Quando o tempo acabar, passará para a votação</div>'
-  }
+  ${IMP.isHost?`<div class="host-panel"><div class="host-panel-title">👑 Host</div>
+    <button class="btn btn-secondary btn-sm" onclick="roomRef.update({phase:'voting',discEnd:0})">⏭️ Ir para Votação</button></div>`
+    :'<div class="status">Quando o tempo acabar, passará para a votação</div>'}
 </div></div>`;
 }
-function rVote(){
-  const names=players();
-  const myVoted=pData(G.myName).vote||G.myVote;
-  const votedCount=names.filter(n=>pData(n).vote).length;
+function rImpVote(){
+  const names=impPlayers(),myVoted=impPD(IMP.myName).vote||IMP.myVote;
+  const votedCount=names.filter(n=>impPD(n).vote).length;
   app.innerHTML=`<div class="page active"><div class="screen" style="padding-top:28px">
   <div style="text-align:center;margin-bottom:20px">
     <div style="font-size:1.6rem;font-weight:900">🗳️ Votação</div>
     <div style="color:var(--muted);margin-top:4px">Quem é o impostor? (${votedCount}/${names.length} votaram)</div>
   </div>
-  ${myVoted?`<div class="status">✅ Você votou em <b>${esc(myVoted)}</b>. Aguardando os outros<span class="dots"></span></div>`:''}
-  ${G.myName===gs?.impostorName?`<div class="info">🎭 Você é o impostor! Tente não ser votado.</div>`:''}
+  ${myVoted?`<div class="status">✅ Você votou em <b>${esc(myVoted)}</b><span class="dots"></span></div>`:''}
+  ${IMP.myName===gs?.impostorName?`<div class="info">🎭 Você é o impostor!</div>`:''}
   <div class="vote-grid">
     ${names.map(n=>{
-      const isMe=n===G.myName;
-      const isSelected=(G.myVote||pData(G.myName).vote)===n;
+      const isMe=n===IMP.myName,isSelected=(IMP.myVote||impPD(IMP.myName).vote)===n;
       const cls=isMe?'no-vote':(myVoted?'done':'');
-      const safeN=n.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
-      return `<div class="vote-card ${isSelected?'selected':cls}" onclick="${!isMe&&!myVoted?`castVote('${safeN}')`:''}" >
+      const sn=n.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
+      return`<div class="vote-card ${isSelected?'selected':cls}" onclick="${!isMe&&!myVoted?`impCastVote('${sn}')`:''}" >
         <div style="font-size:1.6rem">${aE(n)}</div>
         <div style="font-size:.88rem;font-weight:600;margin-top:6px">${esc(n)}</div>
         ${isMe?'<div style="font-size:.7rem;color:var(--muted)">você</div>':''}
-        ${pData(n).vote?'<div style="font-size:.7rem;color:var(--green);margin-top:2px">✓ votou</div>':''}
-      </div>`;
-    }).join('')}
+        ${impPD(n).vote?'<div style="font-size:.7rem;color:var(--green);margin-top:2px">✓ votou</div>':''}
+      </div>`;}).join('')}
   </div>
-  ${G.isHost?`<button class="btn btn-secondary" onclick="hostResult()">🔍 Revelar resultado agora</button>`:''}
+  ${IMP.isHost?`<button class="btn btn-secondary" onclick="impHostResult()">🔍 Revelar resultado</button>`:''}
 </div></div>`;
 }
-function rResults(){
-  const r=gs?.result;
-  if(!r){G.page='lobby';render();return;}
-  const isImp=G.myName===r.impostorName;
-  const iCaught=r.caught;
-  const t=gs?.themeId?themeById(gs.themeId):null;
-  const scores=gs?.scores||{};
-  const sorted=Object.entries(scores).sort((a,b)=>b[1]-a[1]);
-  const myGuessed=pData(G.myName).impostorGuess!=null;
-  const showGuess=isImp&&iCaught&&r.impostorGuess==null&&!myGuessed;
+function rImpResults(){
+  const r=gs?.result;if(!r){G.page='hub';render();return;}
+  const isImp=IMP.myName===r.impostorName,iCaught=r.caught;
+  const t=gs?.themeId?themeById(gs.themeId):null,sorted=Object.entries(gs?.scores||{}).sort((a,b)=>b[1]-a[1]);
+  const showGuess=isImp&&iCaught&&r.impostorGuess==null&&!impPD(IMP.myName).impostorGuess;
   app.innerHTML=`<div class="page active"><div class="screen" style="padding-top:28px">
   <div class="result-banner ${iCaught?'caught':'escaped'}">
     <div class="result-emoji">${iCaught?(isImp?'😵':'🎉'):(isImp?'😈':'😢')}</div>
     <div class="result-title">${iCaught?(isImp?'Você foi pego!':'Impostor capturado!'):(isImp?'Você escapou!':'O impostor escapou!')}</div>
-    <div class="result-sub">${iCaught?`${esc(r.eliminated||'?')} era o impostor`:`${esc(r.impostorName||'?')} era o impostor e não foi eliminado`}</div>
+    <div class="result-sub">${iCaught?`${esc(r.eliminated||'?')} era o impostor`:`${esc(r.impostorName||'?')} era o impostor`}</div>
   </div>
   <div class="word-reveal-box">
-    <div style="color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em">A palavra era</div>
+    <div style="color:var(--muted);font-size:.78rem;text-transform:uppercase">A palavra era</div>
     <div style="font-size:1.6rem;font-weight:900;margin-top:4px">${esc(r.word||gs?.word||'')}</div>
     <div style="color:var(--muted);font-size:.82rem;margin-top:2px">${t?.cat||''}</div>
   </div>
   ${r.impostorGuess!=null?`<div class="word-reveal-box">
-    <div style="color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em">Palpite do impostor</div>
+    <div style="color:var(--muted);font-size:.78rem;text-transform:uppercase">Palpite do impostor</div>
     <div style="font-size:1.1rem;font-weight:700;margin-top:4px;color:${r.impostorGuessCorrect?'var(--green)':'var(--red)'}">
-      "${esc(r.impostorGuess)}" ${r.impostorGuessCorrect?'✅ Correto! +3 pts':'❌ Errado'}
-    </div>
-  </div>`:''}
+      "${esc(r.impostorGuess)}" ${r.impostorGuessCorrect?'✅ Correto! +3 pts':'❌ Errado'}</div></div>`:''}
   ${showGuess?`<div class="host-panel" style="border-color:var(--red)">
-    <div class="host-panel-title" style="color:var(--red)">🎭 Você foi pego! Tente adivinhar a palavra (+3 pts)</div>
-    <input class="input" type="text" placeholder="Qual era a palavra?" oninput="G.impostorGuess=this.value" value="${esc(G.impostorGuess)}" autocomplete="off"/>
-    <button class="btn btn-danger" onclick="sendGuess()">Enviar palpite</button>
-  </div>`:''}
-  <div style="font-weight:700;margin-bottom:10px;font-size:.95rem">📊 Placar geral</div>
+    <div class="host-panel-title" style="color:var(--red)">🎭 Você foi pego! Adivinhe a palavra (+3 pts)</div>
+    <input class="input" type="text" placeholder="Qual era a palavra?" oninput="IMP.impostorGuess=this.value" value="${esc(IMP.impostorGuess)}" autocomplete="off"/>
+    <button class="btn btn-danger" onclick="impSendGuess()">Enviar palpite</button></div>`:''}
+  <div style="font-weight:700;margin-bottom:10px">📊 Placar</div>
   <div class="scores-list">
     ${sorted.map(([n,pts],i)=>`<div class="score-row">
       <div style="display:flex;align-items:center;gap:9px">
-        <div style="color:var(--muted);width:18px;font-size:.85rem;text-align:center">${i+1}</div>
+        <div style="color:var(--muted);width:18px;font-size:.85rem">${i+1}</div>
         <div class="avatar" style="background:${aC(n)};width:28px;height:28px;font-size:.72rem">${init2(n)}</div>
         <div>${esc(n)}</div>
         ${n===r.impostorName?'<span style="font-size:.68rem;background:rgba(255,68,68,.2);color:var(--red);padding:2px 7px;border-radius:10px">impostor</span>':''}
@@ -529,16 +466,450 @@ function rResults(){
       <div class="score-pts">${pts} pts</div>
     </div>`).join('')}
   </div>
-  ${G.isHost
-    ?`<button class="btn btn-primary" onclick="hostStart()">🔄 Próxima Rodada</button>
-      <button class="btn btn-secondary" onclick="leaveRoom()" style="margin-top:10px">🚪 Encerrar jogo</button>`
-    :`<div class="status">Aguardando o host iniciar a próxima rodada<span class="dots"></span></div>
-      <button class="btn btn-secondary" onclick="leaveRoom()" style="margin-top:10px">🚪 Sair</button>`
-  }
+  ${IMP.isHost
+    ?`<button class="btn btn-primary" onclick="impHostStart()">🔄 Próxima Rodada</button>
+      <button class="btn btn-secondary" onclick="impLeave()" style="margin-top:10px">🚪 Encerrar</button>`
+    :`<div class="status">Aguardando próxima rodada<span class="dots"></span></div>
+      <button class="btn btn-secondary" onclick="impLeave()" style="margin-top:10px">🚪 Sair</button>`}
 </div></div>`;
 }
 
-// ── START ─────────────────────────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════════════════
+//  JOGO 2: CODINOMES
+// ═══════════════════════════════════════════════════════════════════
+
+const CN_WORDS=[
+  'COBRA','URSO','LEÃO','TIGRE','LOBO','PATO','RAPOSA','RATO','CORVO','FALCÃO',
+  'ÁGUIA','TOURO','GALO','PEIXE','ABELHA','ARANHA','TUBARÃO','POLVO','BALEIA','PANTERA',
+  'BANCO','CAMPO','ILHA','PONTE','TORRE','ESCOLA','PRAIA','MINA','PORTO','MURO',
+  'VALE','CASTELO','PALÁCIO','ARENA','FÁBRICA','MERCADO','JARDIM','MUSEU','CAVERNA','FLORESTA',
+  'VULCÃO','FAROL','BUNKER','TEMPLO','CATEDRAL','PIRÂMIDE','FORTE','MASMORRA','LABIRINTO','ALDEIA',
+  'CHAVE','ESPADA','ESCUDO','FOGUETE','BOMBA','LIVRO','RELÓGIO','CAIXA','CORDA','ANEL',
+  'COPO','PISTOLA','MARTELO','FACA','ÂNCORA','LÂMPADA','BOLA','DADO','CARTA','MOEDA',
+  'TROFÉU','MAPA','RODA','LANTERNA','ESPELHO','BARRIL','CORRENTE','GRANADA','VENENO','CRISTAL',
+  'DIAMANTE','RUBI','ESMERALDA','AMULETO','PERGAMINHO','SINO','TOCHA','ESCADA','PORTAL','COFRE',
+  'CAPITÃO','REI','RAINHA','DETETIVE','MÉDICO','PILOTO','ESPIÃO','SOLDADO','BANDIDO','ANJO',
+  'DIABO','BRUXA','MAGO','HERÓI','PALHAÇO','PIRATA','NINJA','ROBÔ','GLADIADOR','VAMPIRO',
+  'ZUMBI','FANTASMA','ALIEN','DRAGÃO','FÊNIX','SEREIA','UNICÓRNIO','OGRO','GOBLIN','ASSASSINO',
+  'GELO','FOGO','ÁGUA','TERRA','AR','SOL','LUA','ESTRELA','NUVEM','VENTO',
+  'CHUVA','RAIO','TROVÃO','RIO','MAR','NEVE','PEDRA','AREIA','LAMA','NÉVOA',
+  'AURORA','ECLIPSE','MARÉ','FURACÃO','TORNADO','TSUNAMI','AVALANCHE','ERUPÇÃO','GEADA','TEMPESTADE',
+  'PÃO','MEL','LEITE','VINHO','CAFÉ','AÇÚCAR','SAL','QUEIJO','CARNE','FRUTA',
+  'POÇÃO','ELIXIR','NÉCTAR','COGUMELO','RAIZ',
+  'TEMPO','SORTE','VERDADE','MENTIRA','AMOR','ÓDIO','MORTE','VIDA','PAZ','GUERRA',
+  'OURO','PRATA','SOMBRA','LUZ','SOM','COR','FORÇA','PODER','MAGIA','SEGREDO',
+  'CAOS','ORDEM','DESTINO','SONHO','PESADELO','MEMÓRIA','ILUSÃO','REALIDADE','SILÊNCIO','VAZIO',
+  'TREM','METRÔ','BARCO','SUBMARINO','HELICÓPTERO','BALÃO','CARRO','MOTO','TANQUE','NAVE',
+  'DRONE','LASER','PLASMA','CÓDIGO','VÍRUS','REDE','CHIP','SATÉLITE','SINAL','RADAR',
+  'PLANETA','GALÁXIA','COMETA','BURACO','ÓRBITA','GRAVIDADE','NEBULOSA','ECLIPSE','COSMOS','ESTRELA',
+  'CORRIDA','SALTO','MERGULHO','VOO','CAÇA','PESCA','LUTA','DANÇA','JOGO','MISSÃO',
+  'ESPIONAGEM','SABOTAGEM','INVASÃO','RESGATE','FUGA','ARMADILHA','DUELO','BATALHA','SIEGE','ATAQUE',
+];
+
+const CN={nameInput:'',codeInput:'',roomCode:'',myName:'',myTeam:null,myRole:null,isHost:false,clueWord:'',clueCount:'1',error:'',loading:false};
+let cns=null,cnRef=null,cnUnsub=null;
+
+function cnPL(){return Object.entries(cns?.players||{});}
+function cnPD(n){return cns?.players?.[n]||{};}
+function cnCards(){return Object.values(cns?.cards||{});}
+
+function shuffle(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+
+function cnGenCards(){
+  const words=shuffle(CN_WORDS).slice(0,25);
+  // Red=9(first team), Blue=8, Assassin=1, Neutral=7
+  const assign=shuffle([...Array(9).fill('r'),...Array(8).fill('b'),...Array(1).fill('x'),...Array(7).fill('n')]);
+  const cards={};
+  words.forEach((w,i)=>{cards[i]={w,t:assign[i],rv:false};});
+  return cards;
+}
+
+function onCnState(snap){
+  cns=snap.val();
+  if(!cns){if(!CN.isHost)cnCleanLeave();return;}
+  // host: check win conditions
+  if(CN.isHost&&(cns.phase==='r'||cns.phase==='b')&&!cns.winner){
+    const cards=cnCards();
+    const rLeft=cards.filter(c=>c.t==='r'&&!c.rv).length;
+    const bLeft=cards.filter(c=>c.t==='b'&&!c.rv).length;
+    if(rLeft===0){cnRef.update({winner:'r',phase:'ended'});}
+    else if(bLeft===0){cnRef.update({winner:'b',phase:'ended'});}
+  }
+  render();
+}
+
+async function cnCreate(){
+  const n=(CN.nameInput||'').trim();
+  if(!n){CN.error='Digite seu nome!';render();return;}
+  CN.loading=true;CN.error='';render();
+  try{
+    const code=randCode(),ref=db.ref('cn/'+code.toLowerCase());
+    const cards=cnGenCards();
+    await ref.set({phase:'lobby',hostName:n,winner:null,clue:null,
+      redLeft:9,blueLeft:8,
+      players:{[n]:{team:null,role:null,isHost:true,joinedAt:Date.now()}},
+      cards});
+    CN.roomCode=code.toUpperCase();CN.myName=n;CN.isHost=true;CN.myTeam=null;CN.myRole=null;
+    CN.loading=false;G.page='cn-lobby';cnRef=ref;
+    ref.child('players/'+n).onDisconnect().remove();
+    cnUnsub=ref.on('value',onCnState);render();
+  }catch(e){CN.loading=false;CN.error='Não foi possível conectar.';render();}
+}
+
+async function cnJoin(){
+  const n=(CN.nameInput||'').trim(),code=(CN.codeInput||'').trim().toUpperCase();
+  if(!n){CN.error='Digite seu nome!';render();return;}
+  if(!code||code.length!==4){CN.error='Código deve ter 4 letras!';render();return;}
+  CN.loading=true;CN.error='';render();
+  try{
+    const ref=db.ref('cn/'+code.toLowerCase());
+    const snap=await ref.once('value');
+    if(!snap.exists()){CN.loading=false;CN.error='Sala não encontrada!';render();return;}
+    const d=snap.val();
+    if(d.players&&d.players[n]){CN.loading=false;CN.error='Nome já em uso!';render();return;}
+    if(d.phase&&d.phase!=='lobby'){CN.loading=false;CN.error='O jogo já começou!';render();return;}
+    await ref.child('players/'+n).set({team:null,role:null,isHost:false,joinedAt:Date.now()});
+    CN.roomCode=code.toUpperCase();CN.myName=n;CN.isHost=false;CN.myTeam=null;CN.myRole=null;
+    CN.loading=false;G.page='cn-lobby';cnRef=ref;
+    ref.child('players/'+n).onDisconnect().remove();
+    cnUnsub=ref.on('value',onCnState);render();
+  }catch(e){CN.loading=false;CN.error='Não foi possível conectar.';render();}
+}
+
+async function cnSetTeam(team){
+  CN.myTeam=team;
+  await cnRef.child('players/'+CN.myName).update({team});render();
+}
+async function cnSetRole(role){
+  CN.myRole=role;
+  await cnRef.child('players/'+CN.myName).update({role});render();
+}
+
+async function cnStart(){
+  const players=cnPL();
+  const redSpy=players.find(([,p])=>p.team==='r'&&p.role==='spy');
+  const blueSpy=players.find(([,p])=>p.team==='b'&&p.role==='spy');
+  if(!redSpy){CN.error='Time vermelho precisa de um Espião Chefe!';render();return;}
+  if(!blueSpy){CN.error='Time azul precisa de um Espião Chefe!';render();return;}
+  const redP=players.filter(([,p])=>p.team==='r').length;
+  const blueP=players.filter(([,p])=>p.team==='b').length;
+  if(redP<1||blueP<1){CN.error='Cada time precisa de pelo menos 1 jogador!';render();return;}
+  await cnRef.update({phase:'r',clue:null});// red goes first
+}
+
+async function cnGiveClue(){
+  const w=(CN.clueWord||'').trim();
+  if(!w){CN.error='Digite uma palavra-pista!';render();return;}
+  const count=parseInt(CN.clueCount)||1;
+  await cnRef.update({clue:{word:w.toUpperCase(),count,guessesLeft:count+1}});
+  CN.clueWord='';CN.clueCount='1';render();
+}
+
+async function cnGuess(idx){
+  if(!cns||!cnRef)return;
+  const card=cns.cards[idx];
+  if(!card||card.rv)return;
+  // Only current team's operatives can guess
+  const myRole=cnPD(CN.myName).role;
+  const myTeam=cnPD(CN.myName).team;
+  if(myRole==='spy')return;// spymaster can't guess
+  if(myTeam!==cns.phase)return;// not your turn
+  if(!cns.clue)return;// need clue first
+
+  // Reveal card
+  await cnRef.child('cards/'+idx).update({rv:true});
+
+  // Check what was revealed
+  const t=card.t;
+  if(t==='x'){// assassin - game over
+    const loser=cns.phase,winner=loser==='r'?'b':'r';
+    await cnRef.update({winner,phase:'ended',clue:null});return;
+  }
+
+  // Recalculate scores
+  const snap=await cnRef.once('value');
+  const st=snap.val();
+  const cards=Object.values(st.cards||{});
+  const rLeft=cards.filter(c=>c.t==='r'&&!c.rv).length;
+  const bLeft=cards.filter(c=>c.t==='b'&&!c.rv).length;
+  const update={redLeft:rLeft,blueLeft:bLeft};
+
+  if(rLeft===0){update.winner='r';update.phase='ended';update.clue=null;}
+  else if(bLeft===0){update.winner='b';update.phase='ended';update.clue=null;}
+  else if(t!==cns.phase){// wrong team or neutral → end turn
+    update.phase=cns.phase==='r'?'b':'r';update.clue=null;
+  }else{// correct! decrement guesses
+    const gl=(st.clue?.guessesLeft||1)-1;
+    if(gl<=0){update.phase=cns.phase==='r'?'b':'r';update.clue=null;}
+    else{update['clue/guessesLeft']=gl;}
+  }
+  await cnRef.update(update);
+}
+
+async function cnEndTurn(){
+  const nextTeam=cns.phase==='r'?'b':'r';
+  await cnRef.update({phase:nextTeam,clue:null});
+}
+
+async function cnCleanLeave(){
+  if(cnRef&&cnUnsub){cnRef.off('value',cnUnsub);cnUnsub=null;}
+  cnRef=null;cns=null;
+  CN.roomCode='';CN.myName='';CN.isHost=false;CN.myTeam=null;CN.myRole=null;
+  CN.clueWord='';CN.clueCount='1';CN.error='';CN.loading=false;
+  G.error='';G.page='hub';render();
+}
+async function cnLeave(){
+  if(cnRef){
+    if(CN.isHost)await cnRef.remove().catch(()=>{});
+    else{cnRef.child('players/'+CN.myName).onDisconnect().cancel();await cnRef.child('players/'+CN.myName).remove().catch(()=>{});}
+  }
+  await cnCleanLeave();
+}
+
+// ─── CODENAMES RENDER ─────────────────────────────────────────────
+function rCnHome(){
+  app.innerHTML=`<div class="page active"><div class="screen" style="padding-top:40px">
+  <button class="back" onclick="G.page='hub';G.error='';render()">← Voltar</button>
+  <div style="font-size:2.2rem;margin-bottom:8px">🔐</div>
+  <div class="title">Codinomes</div>
+  <div class="subtitle">Dois times, palavras secretas e um espião chefe. Quem encontrará todos os agentes?</div>
+  ${CN.error?`<div class="alert">${esc(CN.error)}</div>`:''}
+  <input class="input" id="cni" type="text" placeholder="Seu nome" maxlength="20"
+    value="${esc(CN.nameInput)}" oninput="CN.nameInput=this.value" autocomplete="off"/>
+  <button class="btn btn-primary" onclick="cnCreate()" ${CN.loading?'disabled':''}>
+    ${CN.loading?'Criando<span class="dots"></span>':'✨ Criar Nova Sala'}</button>
+  <div class="divider"><div class="divider-line"></div><span class="divider-text">ou entre em sala existente</span><div class="divider-line"></div></div>
+  <input class="input" type="text" placeholder="Código da sala (ex: ABCD)" maxlength="4"
+    value="${esc(CN.codeInput)}" oninput="CN.codeInput=this.value.toUpperCase()"
+    style="text-transform:uppercase;letter-spacing:.18em;font-size:1.2rem;text-align:center" autocomplete="off"/>
+  <button class="btn btn-secondary" onclick="cnJoin()" ${CN.loading?'disabled':''}>🚪 Entrar na Sala</button>
+</div></div>`;
+  setTimeout(()=>document.getElementById('cni')?.focus(),50);
+}
+
+function rCnLobby(){
+  if(!cns){render();return;}
+  const players=cnPL();
+  const myP=cnPD(CN.myName);
+  const red=players.filter(([,p])=>p.team==='r'),blue=players.filter(([,p])=>p.team==='b');
+  app.innerHTML=`<div class="page active"><div class="screen" style="padding-top:24px">
+  <button class="back" onclick="cnLeave()">← Sair</button>
+  <div class="code-box" style="margin-bottom:16px">
+    <div style="color:var(--muted);font-size:.75rem;text-transform:uppercase">Código da Sala</div>
+    <div class="code-big">${CN.roomCode}</div>
+    <button class="btn btn-secondary btn-sm" style="max-width:200px;margin:8px auto 0"
+      onclick="navigator.clipboard?.writeText(location.href);this.textContent='✅ Copiado!'">📋 Copiar link</button>
+  </div>
+  <div style="font-weight:700;margin-bottom:8px;font-size:.9rem">Escolha seu time</div>
+  <div class="team-select">
+    <div class="team-btn red ${myP.team==='r'?'active':''}" onclick="cnSetTeam('r')">
+      <div style="font-size:1.4rem">🔴</div>
+      <div style="font-weight:700;margin-top:4px">Time Vermelho</div>
+      <div style="font-size:.75rem;margin-top:3px">${red.length} jogadores</div>
+    </div>
+    <div class="team-btn blue ${myP.team==='b'?'active':''}" onclick="cnSetTeam('b')">
+      <div style="font-size:1.4rem">🔵</div>
+      <div style="font-weight:700;margin-top:4px">Time Azul</div>
+      <div style="font-size:.75rem;margin-top:3px">${blue.length} jogadores</div>
+    </div>
+  </div>
+  ${myP.team?`<div style="font-weight:700;margin-bottom:8px;font-size:.9rem">Escolha seu papel</div>
+  <div class="role-select">
+    <div class="role-btn ${myP.role==='spy'?'active':''}" onclick="cnSetRole('spy')">
+      <span class="role-icon">🕵️</span>
+      <div style="font-weight:700;font-size:.85rem">Espião Chefe</div>
+      <div style="font-size:.72rem;color:var(--muted);margin-top:3px">Vê todas as cores. Dá pistas.</div>
+    </div>
+    <div class="role-btn ${myP.role==='op'?'active':''}" onclick="cnSetRole('op')">
+      <span class="role-icon">🕴️</span>
+      <div style="font-weight:700;font-size:.85rem">Agente</div>
+      <div style="font-size:.72rem;color:var(--muted);margin-top:3px">Recebe pistas. Tenta adivinhar.</div>
+    </div>
+  </div>`:''}
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">
+    <div style="background:rgba(255,68,68,.08);border:1px solid rgba(255,68,68,.2);border-radius:10px;padding:10px">
+      <div style="color:#ff8888;font-weight:700;font-size:.8rem;margin-bottom:6px">🔴 Vermelho (9 cartas)</div>
+      ${red.map(([n,p])=>`<div style="font-size:.82rem;padding:3px 0;display:flex;justify-content:space-between">
+        <span>${esc(n)}${n===CN.myName?' 👈':''}</span>
+        <span style="color:var(--muted);font-size:.72rem">${p.role==='spy'?'🕵️ Espião':p.role==='op'?'🕴️ Agente':'—'}</span>
+      </div>`).join('')||'<div style="color:var(--muted);font-size:.78rem">Ninguém ainda</div>'}
+    </div>
+    <div style="background:rgba(0,229,255,.06);border:1px solid rgba(0,229,255,.15);border-radius:10px;padding:10px">
+      <div style="color:var(--accent2);font-weight:700;font-size:.8rem;margin-bottom:6px">🔵 Azul (8 cartas)</div>
+      ${blue.map(([n,p])=>`<div style="font-size:.82rem;padding:3px 0;display:flex;justify-content:space-between">
+        <span>${esc(n)}${n===CN.myName?' 👈':''}</span>
+        <span style="color:var(--muted);font-size:.72rem">${p.role==='spy'?'🕵️ Espião':p.role==='op'?'🕴️ Agente':'—'}</span>
+      </div>`).join('')||'<div style="color:var(--muted);font-size:.78rem">Ninguém ainda</div>'}
+    </div>
+  </div>
+  ${CN.error?`<div class="alert">${esc(CN.error)}</div>`:''}
+  ${CN.isHost
+    ?`<button class="btn btn-primary" onclick="cnStart()">🎮 Iniciar Jogo</button>`
+    :'<div class="status">Aguardando o host iniciar<span class="dots"></span></div>'}
+</div></div>`;
+}
+
+function rCnGame(){
+  if(!cns)return;
+  const phase=cns.phase;
+  if(phase==='ended')return rCnEnded();
+  if(phase==='lobby'){G.page='cn-lobby';render();return;}
+
+  const myP=cnPD(CN.myName);
+  const isSpy=myP.role==='spy';
+  const myTeam=myP.team;
+  const isMyTurn=myTeam===phase;
+  const canGuess=isMyTurn&&!isSpy&&cns.clue;
+  const cards=cns.cards||{};
+  const rLeft=cns.redLeft??Object.values(cards).filter(c=>c.t==='r'&&!c.rv).length;
+  const bLeft=cns.blueLeft??Object.values(cards).filter(c=>c.t==='b'&&!c.rv).length;
+
+  const teamName=phase==='r'?'🔴 Vermelho':'🔵 Azul';
+
+  function cardClass(c,i){
+    if(c.rv){// revealed
+      if(c.t==='r')return'r done';if(c.t==='b')return'b done';if(c.t==='x')return'x done';return'n done';
+    }
+    if(isSpy){// spy sees all
+      if(c.t==='r')return`sr${canGuess?' clickable':''}`;
+      if(c.t==='b')return`sb${canGuess?' clickable':''}`;
+      if(c.t==='x')return`sx${canGuess?' clickable':''}`;
+      return`sn${canGuess?' clickable':''}`;
+    }
+    return`h${canGuess?' clickable':''}`;
+  }
+
+  app.innerHTML=`<div class="page active" style="padding:12px 10px 48px">
+  <div style="max-width:520px;margin:0 auto;width:100%">
+  <button class="back" onclick="cnLeave()">← Sair</button>
+  <div class="cn-score-bar">
+    <div class="cn-score-red">🔴 ${rLeft}</div>
+    <div style="color:var(--muted);font-size:.78rem">cartas restantes</div>
+    <div class="cn-score-blue">${bLeft} 🔵</div>
+  </div>
+  <div class="cn-turn-bar ${phase}">${teamName} — ${isMyTurn?'SUA VEZ':'vez deles'}</div>
+  ${isSpy?`<div style="background:rgba(124,77,255,.08);border:1px solid rgba(124,77,255,.2);border-radius:8px;padding:8px 12px;margin-bottom:8px;font-size:.8rem;color:var(--accent)">
+    🕵️ Visão do Espião Chefe ${isMyTurn?'— dê uma pista no painel abaixo':''}</div>`:''}
+  <div class="cn-board">
+    ${Object.entries(cards).map(([i,c])=>`
+      <div class="cn-card ${cardClass(c,i)}" onclick="${canGuess&&!c.rv&&!isSpy?`cnGuess(${i})`:''}">
+        ${esc(c.w)}
+      </div>`).join('')}
+  </div>
+  ${isSpy&&isMyTurn&&!cns.clue?`<div class="cn-spy-panel">
+    <div style="font-size:.8rem;color:var(--accent);font-weight:700;text-transform:uppercase;margin-bottom:10px">Dar pista</div>
+    <input class="input" type="text" placeholder="Uma palavra-pista..." maxlength="30" style="text-transform:uppercase;margin-bottom:8px"
+      value="${esc(CN.clueWord)}" oninput="CN.clueWord=this.value" autocomplete="off"/>
+    <div style="display:flex;gap:8px;align-items:center;margin-bottom:10px">
+      <div style="color:var(--muted);font-size:.85rem">Quantidade:</div>
+      ${[1,2,3,4,5,'∞'].map(n=>`<button onclick="CN.clueCount='${n}';render()" style="width:36px;height:36px;border-radius:8px;border:1.5px solid ${CN.clueCount==String(n)?'var(--accent)':'var(--border)'};background:${CN.clueCount==String(n)?'rgba(124,77,255,.2)':'var(--surface2)'};color:var(--text);cursor:pointer;font-weight:700;font-size:.85rem">${n}</button>`).join('')}
+    </div>
+    ${CN.error?`<div class="alert">${esc(CN.error)}</div>`:''}
+    <button class="btn btn-primary" onclick="cnGiveClue()">✅ Dar pista</button>
+  </div>`:
+  cns.clue?`<div class="cn-clue-display">
+    <div style="color:var(--muted);font-size:.75rem;text-transform:uppercase">Pista atual</div>
+    <div class="cn-clue-word">${esc(cns.clue.word)}</div>
+    <div class="cn-clue-count">${cns.clue.count==='∞'?'∞':cns.clue.count} palavra(s) · ${cns.clue.guessesLeft} tentativa(s) restante(s)</div>
+    ${isMyTurn&&!isSpy?`<button class="btn btn-secondary btn-sm" onclick="cnEndTurn()" style="margin-top:8px">⏭️ Passar a vez</button>`:''}
+  </div>`:`<div class="status">Aguardando pista do Espião Chefe${phase==='r'?' vermelho':' azul'}<span class="dots"></span></div>`}
+  <div class="cn-legend">
+    <div class="cn-legend-item"><div class="cn-legend-dot" style="background:#ff4444"></div><span>Vermelho (${rLeft})</span></div>
+    <div class="cn-legend-item"><div class="cn-legend-dot" style="background:#0099dd"></div><span>Azul (${bLeft})</span></div>
+    <div class="cn-legend-item"><div class="cn-legend-dot" style="background:#3a3a4a"></div><span>Neutro</span></div>
+    <div class="cn-legend-item"><div class="cn-legend-dot" style="background:#111;border:1px solid #444"></div><span>Assassino</span></div>
+  </div>
+</div></div>`;
+}
+
+function rCnEnded(){
+  if(!cns)return;
+  const w=cns.winner;
+  const players=cnPL();
+  const redPlayers=players.filter(([,p])=>p.team==='r');
+  const bluePlayers=players.filter(([,p])=>p.team==='b');
+  const winRed=w==='r',winBlue=w==='b';
+  app.innerHTML=`<div class="page active"><div class="screen" style="padding-top:28px">
+  <div class="result-banner ${winRed?'caught':'escaped'}" style="${winBlue?'background:rgba(0,229,255,.06);border-color:var(--accent2)':''}">
+    <div class="result-emoji">${winRed?'🔴':'🔵'}</div>
+    <div class="result-title">Time ${winRed?'Vermelho':'Azul'} Venceu!</div>
+    <div class="result-sub">Parabéns, agentes!</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px">
+    <div style="background:rgba(255,68,68,.08);border:1px solid rgba(255,68,68,.2);border-radius:10px;padding:12px;text-align:center">
+      <div style="font-size:1.4rem">🔴</div>
+      <div style="font-weight:700;margin-top:4px;color:#ff8888">Vermelho</div>
+      ${redPlayers.map(([n,p])=>`<div style="font-size:.82rem;margin-top:3px">${esc(n)} ${p.role==='spy'?'🕵️':''}</div>`).join('')}
+    </div>
+    <div style="background:rgba(0,229,255,.06);border:1px solid rgba(0,229,255,.15);border-radius:10px;padding:12px;text-align:center">
+      <div style="font-size:1.4rem">🔵</div>
+      <div style="font-weight:700;margin-top:4px;color:var(--accent2)">Azul</div>
+      ${bluePlayers.map(([n,p])=>`<div style="font-size:.82rem;margin-top:3px">${esc(n)} ${p.role==='spy'?'🕵️':''}</div>`).join('')}
+    </div>
+  </div>
+  ${CN.isHost
+    ?`<button class="btn btn-primary" onclick="cnRematch()">🔄 Nova Partida</button>
+      <button class="btn btn-secondary" onclick="cnLeave()" style="margin-top:10px">🚪 Encerrar</button>`
+    :`<div class="status">Aguardando nova partida<span class="dots"></span></div>
+      <button class="btn btn-secondary" onclick="cnLeave()" style="margin-top:10px">🚪 Sair</button>`}
+</div></div>`;
+}
+
+async function cnRematch(){
+  const cards=cnGenCards();
+  await cnRef.update({phase:'lobby',winner:null,clue:null,redLeft:9,blueLeft:8,cards});
+  // Reset player choices
+  const players=cnPL();
+  const updates={};
+  players.forEach(([n])=>{updates[`players/${n}/team`]=null;updates[`players/${n}/role`]=null;});
+  await cnRef.update(updates);
+}
+
+// ═══════════════════════════════════════════════════════════════════
+//  HUB + ROTEADOR PRINCIPAL
+// ═══════════════════════════════════════════════════════════════════
+
+const app=document.getElementById('app');
+function render(){
+  const p=G.page;
+  if(p==='hub')return rHub();
+  if(p==='imp-home')return rImpHome();
+  if(p==='imp-lobby'||p==='imp-game')return rImpGame();
+  if(p==='cn-home')return rCnHome();
+  if(p==='cn-lobby')return rCnLobby();
+  if(p==='cn-game')return rCnGame();
+}
+
+function rHub(){
+  app.innerHTML=`<div class="page active">
+  <div class="hub-header">
+    <div class="hub-logo">🎮 GameHub</div>
+    <div class="hub-sub">Jogos para jogar com seus amigos</div>
+  </div>
+  <div class="games-grid">
+    <div class="game-card live" onclick="G.page='imp-home';G.error='';IMP.nameInput='';IMP.codeInput='';render()">
+      <div class="card-icon">🕵️</div>
+      <div class="card-name">Quem é o Impostor?</div>
+    </div>
+    <div class="game-card live" onclick="G.page='cn-home';G.error='';CN.nameInput='';CN.codeInput='';render()">
+      <div class="card-icon">🔐</div>
+      <div class="card-name">Codinomes</div>
+    </div>
+    <div class="game-card soon"><div class="soon-badge">Em Breve</div><div class="card-icon">📝</div><div class="card-name">Quem Sou Eu?</div></div>
+    <div class="game-card soon"><div class="soon-badge">Em Breve</div><div class="card-icon">🎨</div><div class="card-name">Gartic Phone</div></div>
+  </div>
+</div>`;
+}
+
+// Sincronizar page quando volta de lobby
+function syncPage(){
+  if(cns&&G.page==='cn-lobby'&&cns.phase!=='lobby')G.page='cn-game';
+  if(cns&&G.page==='cn-game'&&cns.phase==='lobby')G.page='cn-lobby';
+  if(gs&&(G.page==='imp-lobby'||G.page==='imp-game'))G.page='imp-game';
+}
+const _render=render;
+function render(){syncPage();_render();}
+
 render();
 </script>
 </body>
